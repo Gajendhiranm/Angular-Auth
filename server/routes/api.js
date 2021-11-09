@@ -7,8 +7,6 @@ router.get('/', (req, res) => {
     res.send("hello from api.js")
 })
 
-
-
 router.post('/register', async (req, res) => {
     let userData = req.body;
     try {
@@ -20,7 +18,6 @@ router.post('/register', async (req, res) => {
         console.log(err)
     }
 })
-
 
 router.post("/login",(req,res)=> {
     let userData = req.body;
@@ -41,8 +38,89 @@ router.post("/login",(req,res)=> {
     })
 })
 
-
-
+router.get('/events', (req,res) => {
+    let events = [
+      {
+        "_id": "1",
+        "name": "Auto Expo",
+        "description": "lorem ipsum",
+        "date": "2012-04-23T18:25:43.511Z"
+      },
+      {
+        "_id": "2",
+        "name": "Auto Expo",
+        "description": "lorem ipsum",
+        "date": "2012-04-23T18:25:43.511Z"
+      },
+      {
+        "_id": "3",
+        "name": "Auto Expo",
+        "description": "lorem ipsum",
+        "date": "2012-04-23T18:25:43.511Z"
+      },
+      {
+        "_id": "4",
+        "name": "Auto Expo",
+        "description": "lorem ipsum",
+        "date": "2012-04-23T18:25:43.511Z"
+      },
+      {
+        "_id": "5",
+        "name": "Auto Expo",
+        "description": "lorem ipsum",
+        "date": "2012-04-23T18:25:43.511Z"
+      },
+      {
+        "_id": "6",
+        "name": "Auto Expo",
+        "description": "lorem ipsum",
+        "date": "2012-04-23T18:25:43.511Z"
+      }
+    ]
+    res.json(events)
+  })
+  
+  router.get('/special', (req, res) => {
+    let specialEvents = [
+      {
+        "_id": "1",
+        "name": "Auto Expo Special",
+        "description": "lorem ipsum",
+        "date": "2012-04-23T18:25:43.511Z"
+      },
+      {
+        "_id": "2",
+        "name": "Auto Expo Special",
+        "description": "lorem ipsum",
+        "date": "2012-04-23T18:25:43.511Z"
+      },
+      {
+        "_id": "3",
+        "name": "Auto Expo Special",
+        "description": "lorem ipsum",
+        "date": "2012-04-23T18:25:43.511Z"
+      },
+      {
+        "_id": "4",
+        "name": "Auto Expo Special",
+        "description": "lorem ipsum",
+        "date": "2012-04-23T18:25:43.511Z"
+      },
+      {
+        "_id": "5",
+        "name": "Auto Expo Special",
+        "description": "lorem ipsum",
+        "date": "2012-04-23T18:25:43.511Z"
+      },
+      {
+        "_id": "6",
+        "name": "Auto Expo Special",
+        "description": "lorem ipsum",
+        "date": "2012-04-23T18:25:43.511Z"
+      }
+    ]
+    res.json(specialEvents)
+  })
 
 
 module.exports = router
